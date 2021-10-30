@@ -1,8 +1,11 @@
+# 模範解答の答え
+# `$'で始まる変数はグローバル変数で、プログラムのどこからでも参照できます
 $board = []
 
 # 盤面の初期化
+# 5回入力する
 (1..5).each { $board.push(gets.chomp.split('')) }
-
+# 5つ並んでいるかどうか
 def aligned?(o, x)
   if o == 5
     'O'
@@ -12,7 +15,7 @@ def aligned?(o, x)
     'D'
   end
 end
-
+# 横にならんでいるかどうか
 def row_aligned?
   result = ''
 
