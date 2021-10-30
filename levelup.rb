@@ -46,19 +46,32 @@
 # puts result
 
 # 4.五目並べ（縦） (paizaランク C 相当)
-# 途中
-array = %w[O X]
+
+board = []
 result = 'D'
-5.times do
-  string = gets.chomp.split('')
-  # OとXを展開
-  array.each do |a|
-    # 並びの数
-    cnt = 0
-    # 展開した入力値がOかXの時対象の並びの数としてカウントする
-    string.each { |s| cnt = cnt + 1 if s == a }
-    # 対象（OかX）のカウントが5以上の時結果がaになる
-    result = a if cnt >= 5
+
+# 盤面の初期化
+# 5回入力された内容をboardへpushする
+(1..5).each { board.push(gets.chomp.split('')) }
+
+(0..4).each do |i|
+  o = 0
+  x = 0
+  board.each do |row|
+    if row[i] == 'O'
+      o = o + 1
+    elsif row[i] == 'X'
+      x = x + 1
+    end
+  end
+
+  if o == 5
+    result = 'O'
+    break
+  elsif x == 5
+    result = 'X'
+    break
   end
 end
+
 puts result
