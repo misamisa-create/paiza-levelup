@@ -1,18 +1,18 @@
 # 五目並べ(ランクB)を解くための演習問題
 
 # 2.五目並べ(1行) (paizaランク D 相当)
-# array = %w[O X]
-# string = gets.chomp.split('')
-# result = 'D'
-# # OとXを展開
-# array.each do |a|
-#   # 並びの数
-#   cnt = 0
-#   # 入力した文字列を展開
-#   string.each { |s| cnt = cnt + 1 if s == a }
-#   result = a if cnt >= 5
-# end
-# puts result
+array = %w[O X]
+string = gets.chomp.split('')
+result = 'D'
+# OとXを展開
+array.each do |a|
+  # 並びの数
+  cnt = 0
+  # 入力した文字列を展開
+  string.each { |s| cnt = cnt + 1 if s == a }
+  result = a if cnt >= 5
+end
+puts result
 # 3.五目並べ(横) (paizaランク C 相当)
 array = %w[O X]
 result = 'D'
